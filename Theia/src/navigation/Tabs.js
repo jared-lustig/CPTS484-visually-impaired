@@ -3,9 +3,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from '../screens/HomeScreen';
 import { CameraButton } from '../camera/CameraButton';
-import { PaperProvider } from 'react-native-paper';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function Tabs() {
   return (
@@ -40,15 +40,16 @@ function Tabs() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <Image 
-              source={require('../../assets/favicon.png')}
-              resizeMode="contain"
-              style={{
-                width: 30,
-                height: 30,
-                tintColor: '#fff'
-              }}
-            />
+            // <Image 
+            //   source={require('../../assets/favicon.png')}
+            //   resizeMode="contain"
+            //   style={{
+            //     width: 30,
+            //     height: 30,
+            //     tintColor: '#fff'
+            //   }}
+            // />
+            <MaterialCommunityIcons name="camera" color={color} size={40} />
           ),
           tabBarButton: (props) => (
             <CameraButton {...props} />

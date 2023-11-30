@@ -2,6 +2,7 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeScreen from '../screens/HomeScreen';
+import MapScreen from '../screens/MapScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,12 +24,12 @@ function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={HomeScreen}
+        name="maps"
+        component={MapScreen}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Maps',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="navigation" color={color} size={26} />
           ),
         }}
       />

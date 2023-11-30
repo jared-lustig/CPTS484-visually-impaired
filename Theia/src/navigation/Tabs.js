@@ -2,6 +2,8 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeScreen from '../screens/HomeScreen';
+import { CameraButton } from '../camera/CameraButton';
+import { PaperProvider } from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -29,6 +31,37 @@ function Tabs() {
           tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="bell" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Camera"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <Image 
+              source={require('../../assets/favicon.png')}
+              resizeMode="contain"
+              style={{
+                width: 30,
+                height: 30,
+                tintColor: '#fff'
+              }}
+            />
+          ),
+          tabBarButton: (props) => (
+            <CameraButton {...props} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name="Navigation"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Navigation',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="navigation" color={color} size={26} />
           ),
         }}
       />

@@ -15,6 +15,12 @@ export default function MapScreen() {
 
   console.log(value)
 
+  const navigation = useNavigation();
+
+  const handleNavigateToFalls = () => {
+    navigation.navigate('FallScreen'); // Replace 'FallScreen' with the actual route name if it's different
+  };
+
   return (
     <View>
       <Image 
@@ -23,6 +29,7 @@ export default function MapScreen() {
               marginRight:'auto'}} 
       source={mapList[value]} />
       <DropdownComponent data={mapKeys} value={value} setValue={setValue}/>
+      <Button title="Report a Fall" onPress={handleNavigateToFalls} color="#841584"/>
     </View>
   );
 }

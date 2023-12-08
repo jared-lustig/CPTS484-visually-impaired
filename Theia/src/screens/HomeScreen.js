@@ -33,27 +33,8 @@ export default function HomeScreen() {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      {hasPermission && hasPermission !== null && isCameraOpen ? (
-        <View style={styles.cameraContainer}>
-          <Camera style={styles.fixedRatio} type={cameraType} ratio={"1:1"} />
-
-          <Button onPress={closeCamera} style={styles.cameraButton}>
-            Close Camera
-          </Button>
-          <Button
-            onPress={handleCameraTypeToggle}
-            style={{ ...styles.cameraButton, right: 16 }}
-          >
-            Flip Camera
-          </Button>
-        </View>
-      ) : (
-        <View>
-          <Text>Home Screen</Text>
-          <Button onPress={openCamera}>Open Camera</Button>
-        </View>
-      )}
+    <View>
+      <Text>Home Screen</Text>
     </View>
   );
 }

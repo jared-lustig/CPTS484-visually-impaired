@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Image, View} from "react-native";
+import { Button } from "react-native-paper";
+import { useNavigation } from '@react-navigation/native';
+import FallScreen from '../screens/FallScreen';
 
 import DropdownComponent from "../components/DropDownComponent";
 
@@ -15,6 +18,12 @@ export default function MapScreen() {
 
   console.log(value)
 
+  const navigation = useNavigation();
+
+  const handleNavigateToFalls = () => {
+    navigation.navigate(FallScreen); // Replace 'FallScreen' with the actual route name if it's different
+  };
+
   return (
     <View>
       <Image 
@@ -23,6 +32,24 @@ export default function MapScreen() {
               marginRight:'auto'}} 
       source={mapList[value]} />
       <DropdownComponent data={mapKeys} value={value} setValue={setValue}/>
+      <Button title="Report a Fall" onPress={handleNavigateToFalls} color="#841584"/>
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
+    backgroundColor: "#fff",
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: "center",
+  },
+  button: {
+    padding: 10,
+  },
+});

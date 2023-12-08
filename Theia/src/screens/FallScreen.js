@@ -19,7 +19,14 @@ export default function FallScreen() {
             onPress={navigation.navigate(HomeScreen)}
             style={styles.button}
           >
-            Yes, take me back to the Home Screen
+            Call Emergency Contact
+          </Button>
+          <Button
+            mode="contained"
+            onPress={navigation.navigate("Home")}
+            style={styles.button}
+          >
+            I'm Ok
           </Button>
         </View>
       );

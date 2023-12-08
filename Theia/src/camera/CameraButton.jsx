@@ -13,7 +13,7 @@ export const CameraButton = ({children, onPress}) => (
             width: 70,
             height: 70,
             borderRadius: 35,
-            backgroundColor: 'white'
+            backgroundColor: '#f0e2df',
         }}>
             {children}
         </View>

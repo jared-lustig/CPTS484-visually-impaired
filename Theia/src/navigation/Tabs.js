@@ -12,7 +12,13 @@ function Tabs() {
     <Tab.Navigator
       initialRouteName="Feed"
       activeColor="#e91e63"
-      barStyle={{ backgroundColor: 'tomato' }}
+      inactiveColor="#95a5a6"
+      barStyle={{ backgroundColor: '#e91e63' }}
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: '#b3caf5',
+        },
+      }}
     >
       <Tab.Screen
         name="Feed"

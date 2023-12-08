@@ -11,12 +11,13 @@ export default function HomeScreen() {
 
 
   return (
-        <View>
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <Text>Home Screen</Text>
           <TextInput onChangeText={newText => setTextToSpeak(newText)} value={textToSpeak}/>
-          <Button style={{backgroundColor: '#a0b00c',}} onPress={() => Speech.speak(textToSpeak)} />
+          <Button title="Submit" style={{backgroundColor: '#a0b00c',}} onPress={() => Speech.speak(textToSpeak)}>
+            Submit
+          </Button>
         </View>
-
   );
 }
 

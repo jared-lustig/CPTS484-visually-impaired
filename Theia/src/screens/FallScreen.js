@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Button } from "react-native-paper";
 import { useNavigation } from '@react-navigation/native';
 import HomeScreen from '../screens/HomeScreen';
+import * as Speech from 'expo-speech'
 
 export default function FallScreen() {
     const navigation = useNavigation();
-
+    useEffect(() => {
+      Speech.speak("Fall Detected");
+    }, [])
 
     return (
         <View style={styles.container}>

@@ -33,18 +33,8 @@ function Tabs() {
           ),
         }}
       />
-            <Tab.Screen
-        name="Feed"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
-        }}
-      />
       <Tab.Screen
-        name="maps"
+        name="Maps"
         component={MapScreen}
         options={{
           tabBarLabel: 'Maps',
@@ -58,16 +48,6 @@ function Tabs() {
         component={CameraView}
         options={{
           tabBarLabel: 'Camera',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="camera" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="camera" color={color} size={26} />
           ),

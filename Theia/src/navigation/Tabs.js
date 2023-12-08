@@ -2,6 +2,7 @@ import { createMaterialBottomTabNavigator } from 'react-native-paper/react-navig
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import HomeScreen from '../screens/HomeScreen';
+import MapScreen from '../screens/MapScreen';
 import { CameraButton } from '../camera/CameraButton';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CameraView from '../camera/CameraView';
@@ -23,8 +24,18 @@ function Tabs() {
       }}
     >
       <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+            <Tab.Screen
         name="Feed"
-        component={FeedScreen}
+        component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -33,12 +44,12 @@ function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={HomeScreen}
+        name="maps"
+        component={MapScreen}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Maps',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="navigation" color={color} size={26} />
           ),
         }}
       />
@@ -53,12 +64,12 @@ function Tabs() {
         }}
       />
       <Tab.Screen
-        name="Navigation"
+        name="Notifications"
         component={HomeScreen}
         options={{
-          tabBarLabel: 'Navigation',
+          tabBarLabel: 'Updates',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="navigation" color={color} size={26} />
+            <MaterialCommunityIcons name="camera" color={color} size={26} />
           ),
         }}
       />

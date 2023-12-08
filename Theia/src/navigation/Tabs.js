@@ -3,10 +3,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
-import { CameraButton } from '../camera/CameraButton';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CameraView from '../camera/CameraView';
-import FeedScreen from '../screens/FeedScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -50,16 +49,6 @@ function Tabs() {
           tabBarLabel: 'Camera',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="camera" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />

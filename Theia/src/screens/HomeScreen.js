@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
-import { Text, Button } from "react-native-paper";
+import { Text, Button, TextInput } from "react-native-paper";
 import { Camera } from "expo-camera";
+import * as Speech from 'expo-speech'
 
 export default function HomeScreen() {
   const [hasPermission, setHasPermission] = useState(false);
   const [cameraType, setCameraType] = useState(Camera.Constants.Type.front);
   const [isCameraOpen, setIsCameraOpen] = useState(false);
+  const [textToSpeak, setTextToSpeak] = React.useState("");
 
   useEffect(() => {
     (async () => {
@@ -26,10 +28,12 @@ export default function HomeScreen() {
 
   const openCamera = () => {
     setIsCameraOpen(true);
+    Speech.speak('opening camera');
   };
 
   const closeCamera = () => {
     setIsCameraOpen(false);
+    Speech.speak("closing camera");
   };
 
   return (
@@ -52,6 +56,8 @@ export default function HomeScreen() {
         <View>
           <Text>Home Screen</Text>
           <Button onPress={openCamera}>Open Camera</Button>
+          <TextInput onChangeText={newText => setTextToSpeak(newText)} value={textToSpeak}/>
+          <Button style={{backgroundColor: '#a0b00c',}} onPress={() => Speech.speak(textToSpeak)} />
         </View>
       )}
     </View>

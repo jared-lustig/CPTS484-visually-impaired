@@ -4,6 +4,7 @@ import { Text, Button, TextInput } from "react-native-paper";
 import { Camera } from "expo-camera";
 import * as Speech from 'expo-speech'
 
+
 export default function HomeScreen() {
   const [textToSpeak, setTextToSpeak] = React.useState("");
 

@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import MapScreen from '../screens/MapScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CameraView from '../camera/CameraView';
+import FallScreen from '../screens/FallScreen';
 
 
 const Tab = createBottomTabNavigator();
@@ -49,6 +50,16 @@ function Tabs() {
           tabBarLabel: 'Camera',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="camera" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Fall Screen"
+        component={FallScreen}
+        options={{
+          tabBarLabel: 'Fall Screen',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="fallscreen" color={color} size={26} />
           ),
         }}
       />
